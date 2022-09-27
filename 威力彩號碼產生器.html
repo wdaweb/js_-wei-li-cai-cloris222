@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const weli = () => {
+        //     let weliarr = []
+
+        //     for (let i = 0; i <= 100; i++) {
+        //         weliarr.push(Math.ceil((37 * Math.random())));
+        //     } if (i > 0) {
+
+        //     }
+
+        // }
+
+        // 老師解法：
+        // 解法一
+        const rand = (min, max) => {
+            return Math.round(Math.random() * (max - min) + min)
+        }
+        const groupA = []
+        for (let i = 0; i < 6; i++) {
+            const num = rand(1, 38)
+            //如果重複時讓迴圈重跑一次 => i--
+            if (groupA.includes(num)) i--
+            else groupA.push(num)
+        }
+        const groupB = rand(1, 8)
+        document.write(`${groupA},${groupB}`)
+
+        // // 解法二
+        // while (groupA.length < 6) {
+        //     const num = rand(1, 38)
+        //     // !groupA.includes(num)如果不包含才放到數列中
+        //     if (!groupA.includes(num)) {
+        //         groupA.push(num)
+        //     }
+        // }
+
+        // // 解法三
+        // const numbers = []
+        // for (let i = 1; i <= 38; i++) {
+        //     numbers.push(i)
+        // }
+        // for (let j = 0; j < 6; j++) {
+        //     const index = rand(0, numbers.length - 1)
+        //     groupA.push(numbers[index])
+        //     // 將取到的索引從數字陣列中移除
+        //     // .splice(開始數字,刪除數量)
+        //     numbers.splice(index, 1)
+        // }
+    </script>
+</body>
+
+</html>
